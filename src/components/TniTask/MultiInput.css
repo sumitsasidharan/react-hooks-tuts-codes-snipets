@@ -1,3 +1,25 @@
+/*  */
+.multiInput_Wrapper {
+   width: 700px;
+   padding: .2rem .5rem;
+   margin: .5rem 0;
+   border: 1px solid;
+   border-radius: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   gap: 1rem;
+   
+}
+
+.copyIcon_Wrapper,
+.disable_Toggle,
+.deleteIcon_Wrapper {
+   cursor: pointer;
+}
+
+
+
 /* The switch - the box around the slider */
 .switch {
    position: relative;

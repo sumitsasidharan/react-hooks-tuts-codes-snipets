@@ -1,13 +1,16 @@
 export const selectListArray = [
    {
       id: 1,
+      name: 'measureRoot',
       mainLabel: 'Select a measure-root',
       subLists: [
          {
+            id: 101,
             subLabel: 'Measures',
             values: ['sub-filter', 'number'],
          },
          {
+            id: 102,
             subLabel: 'Stock attributes',
             values: [
                'symbol',
@@ -26,22 +29,21 @@ export const selectListArray = [
    },
    {
       id: 2,
+      name: 'operation',
       mainLabel: 'Select an operation',
       subLists: [
          {
+            id: 201,
             subLabel: 'Operations',
-            values: ['Remove all on right',],
+            values: ['Remove all on right'],
          },
          {
+            id: 202,
             subLabel: 'Arithmetic Operations',
-            values: [
-               '+',
-               '-',
-               '*',
-               '/',
-            ],
+            values: ['+', '-', '*', '/'],
          },
          {
+            id: 203,
             subLabel: 'Comparison Operations',
             values: [
                'Equals',
@@ -53,23 +55,24 @@ export const selectListArray = [
             ],
          },
          {
+            id: 204,
             subLabel: 'Cross Operations',
-            values: [
-               'Crossed above',
-               'Crossed below',
-            ],
+            values: ['Crossed above', 'Crossed below'],
          },
       ],
    },
    {
       id: 3,
+      name: 'measure',
       mainLabel: 'Select a measure',
       subLists: [
          {
+            id: 301,
             subLabel: 'Measures',
-            values: ['Number',],
+            values: ['Number'],
          },
          {
+            id: 302,
             subLabel: 'Stock attributes',
             values: [
                'Symbol',
@@ -83,7 +86,6 @@ export const selectListArray = [
                'Volume',
             ],
          },
-         
       ],
    },
 ];

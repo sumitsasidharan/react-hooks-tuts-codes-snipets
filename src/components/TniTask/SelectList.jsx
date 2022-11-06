@@ -1,23 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const SelectList = ({ options }) => {
-   console.log(options);
+import './SelectList.css';
 
+const SelectList = ({ options, setAllSelectedOptions }) => {
+   const [selectedOption, setSelectedOption] = useState();
+
+   const handleChangeValue = (e) => {
+      setAllSelectedOptions(prev => {
+         return {
+            ...prev,
+            [e.target.name]: e.target.value
+         }
+      });
+      
+   };
+   
    return (
-      <div className="select_List">
-         <label htmlFor="cars">LABEL</label>
-         <select name="cars" id="cars" autoFocus>
-            <option value="">{options.mainLabel}</option>
-            {options.subLists.map((item) => {
-               return (
-                  <optgroup label={item.subLabel}>
-                     {item.values.map((option) => {
-                        return <option value={option}>{option}</option>;
-                     })}
-                  </optgroup>
-               );
-            })}
-         </select>
+      <div className="selectList_Wrapper">
+         <div className="select_List">
+            {/* <label htmlFor="cars">LABEL</label> */}
+            <select
+               name={options.name}
+               id={options.name}
+               autoFocus
+               onChange={handleChangeValue}>
+               <option value="">{options.mainLabel}</option>
+               {options.subLists.map((item) => {
+                  return (
+                     <optgroup key={item.id} label={item.subLabel}>
+                        {item.values.map((option, index) => {
+                           return (
+                              <option key={option} value={option}>
+                                 {option}
+                              </option>
+                           );
+                        })}
+                     </optgroup>
+                  );
+               })}
+            </select>
+         </div>
       </div>
    );
 };

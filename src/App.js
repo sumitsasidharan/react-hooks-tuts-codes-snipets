@@ -1,13 +1,13 @@
 import Form from './components/Form';
 import Post from './components/Post';
-import MultiInput from './components/TniTask/MultiInput';
+import MultiInputList from './components/TniTask/MultiInputList';
 
 function App() {
    return (
       <div className="App">
          {/* <Post /> */}
          {/* <Form /> */}
-         <MultiInput />
+         <MultiInputList />
       </div>
    );
 }
