@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 
 import './SelectList.css';
 
-const SelectList = ({ options, setAllSelectedOptions }) => {
-   const [selectedOption, setSelectedOption] = useState();
+const SelectList = ({
+   options,
+   setAllSelectedOptions,
+   allSelectedOptions,
+}) => {
+   // const [selectedOption, setSelectedOption] = useState();
 
    const handleChangeValue = (e) => {
-      setAllSelectedOptions(prev => {
+      setAllSelectedOptions((prev) => {
          return {
             ...prev,
-            [e.target.name]: e.target.value
-         }
+            [e.target.name]: e.target.value,
+         };
       });
-      
    };
-   
+
    return (
       <div className="selectList_Wrapper">
          <div className="select_List">
@@ -23,6 +26,7 @@ const SelectList = ({ options, setAllSelectedOptions }) => {
                name={options.name}
                id={options.name}
                autoFocus
+               defaultValue={allSelectedOptions[options.name]}
                onChange={handleChangeValue}>
                <option value="">{options.mainLabel}</option>
                {options.subLists.map((item) => {

@@ -9,6 +9,13 @@
    align-items: center;
    justify-content: start;
    gap: 1rem;
+   position: relative;
+   
+   /* background-color: gray; */
+}
+
+.multiInput_Wrapper.disabled {
+   background-color: #ccc;
    
 }
 

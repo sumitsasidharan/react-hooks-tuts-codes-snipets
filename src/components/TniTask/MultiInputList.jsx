@@ -15,10 +15,12 @@ const MultiInputList = () => {
       measure: '',
       disableFilter: false,
    });
-
+// console.log(inputListData);
+// console.log(allSelectedOptions);
    const addMultiList = () => {
       const randID = Math.round(new Date().getTime() / 1000);
       setInputListData((prev) => {
+         // console.log(prev)
          return [
             ...prev,
             {
@@ -30,6 +32,26 @@ const MultiInputList = () => {
 
       showMessage('New List Added!');
    };
+
+   
+
+   // COPY LIST
+   const copyList = () => {
+      const randID = Math.round(new Date().getTime() / 1000);
+      setInputListData((prev) => {
+         return [
+            ...prev,
+            {
+               id: randID,
+               multiListArray: selectListArray,
+            },
+         ];
+      });
+
+      const { measureRoot, operation, measure, disableFilter,} = allSelectedOptions;
+      setAllSelectedOptions({ measureRoot, operation, measure, disableFilter});
+      showMessage('List Copied!');
+   }
 
    const deleteList = (id) => {
       setInputListData((prev) => {
@@ -70,6 +92,7 @@ const MultiInputList = () => {
                   allSelectedOptions={allSelectedOptions}
                   setAllSelectedOptions={setAllSelectedOptions}
                   showMessage={showMessage}
+                  copyList={copyList}
                />
             );
          })}
